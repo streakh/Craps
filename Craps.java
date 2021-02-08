@@ -7,27 +7,21 @@
  */
 public class Craps
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Craps
-     */
-    public Craps()
+    public static void main (String[] args)
     {
-        // initialise instance variables
-        x = 0;
+    Die d1 = new Die();
+    Die d2 = new Die();
+    
+    int total = d1.roll() + d2.roll();
+    
+    if (total == 7 || total == 11)
+    {
+        //win
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    else if (total == 2 || total == 3 || total == 12)
     {
-        // put your code here
-        return x + y;
+        //loss
+    }
+    
     }
 }
