@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Die here.
+ * Creates and returns a random die for the craps game
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Streak Honey
+ * @version  2-11-2021
  */
 public class Die
 {
