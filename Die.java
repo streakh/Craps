@@ -7,7 +7,7 @@
  */
 public class Die
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int roll;
 
     /**
@@ -21,12 +21,14 @@ public class Die
 
     public int roll()
     {
+        //random roll of a dice
         roll = (int) (Math.random() * 6 + 1);
         return roll;
     }
      
     public int getResult()
     {
+        //return value of the roll
         return roll;
     }
 }

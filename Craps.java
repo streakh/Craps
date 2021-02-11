@@ -22,7 +22,7 @@ public class Craps
             System.out.println ("4. a. You roll the point again and win!");
             System.out.println ("4. b. or you roll a 7 and lose.");
         }
-        System.out.print("Would you like to play Craps (Y/N)?");
+        System.out.println("Would you like to play Craps (Y/N)?");
         String playGame = in.nextLine();
         
         while (playGame.equals("") || playGame.substring(0,1).equalsIgnoreCase("Y")) //start the game, default yes
@@ -35,11 +35,12 @@ public class Craps
             Die d1 = new Die();
             Die d2 = new Die();
             int total = d1.roll() + d2.roll();
-
-            System.out.println ("You rolled a " + d1.getResult() + " and a " + d2.getResult());
-            System.out.println ("Your total is " + total);
+            
+            //System.out.println ("You rolled a " + d1.getResult() + " and a " + d2.getResult()); //shows individual dice
+            System.out.println ("You rolled a " + total);
             if (total == 7 || total == 11)
             {
+                //win
                 System.out.println ("You won!");
             }
             else if (total == 2 || total == 3 || total == 12)
@@ -51,35 +52,42 @@ public class Craps
             else //neither yet
             {
                 int point = total;
-                total = d1.roll() + d2.roll();
+                //initial neither to set up for stage 2
                 System.out.println ("You didn't win or lose, you're still in it!");
                 System.out.println ("Your point is " + total + ". Let's see if u can roll it before you roll a 7.");
+                
+                System.out.println ("Press <Enter> to roll the dice.");
+                entered = in.nextLine();
+                total = d1.roll() + d2.roll();
+                System.out.println ("You rolled a " + total);
                 while (total != 7 && total != point)
                 {
-                    //neither
-                    
+                    //neither loop
+                    System.out.println ("Keep rolling...");
                     System.out.println ("Press <Enter> to roll the dice.");
                     entered = in.nextLine();
-                    System.out.println ("You rolled a " + d1.getResult() + " and a " + d2.getResult());
                     total = d1.roll() + d2.roll();
-                    System.out.println ("Your total is " + total);
+                    System.out.println ("You rolled a " + total);
                 }
                 
+
                 if (total == point)
                 {
-                    // won
+                    // checks in point is total for win
                     System.out.println ("You won!");
                 }
                 else
                 {
-                    // lost
+                    // assumes total is 7, so loss
                     System.out.println ("You lost. :(");
                 }
             }
+            //loop for play again
             System.out.println ("Want to play again? (Y/N)");
             playGame = in.nextLine();
         }
         
+        //if playGame is N
         {
             System.out.println ("Sorry to hear. Come back another time!");
         }
