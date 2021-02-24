@@ -93,3 +93,20 @@ public class Craps
         }
     }
 }
+
+
+/* 
+
+COMMENTS FROM THE INSTRUCTOR:
+
+Nice work on this, Streak! The program works just about as it should.
+Another touch you could include: indicate the default value, Y or N,
+by capitalizing it. (Y/n) indicates that if they hit [Enter], the Y
+value will be indicated.
+
+Otherwise, outstanding. Keep it up!
+
+SCORE: 15/15
+
+*/
+
